@@ -43,7 +43,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
     //send the resulting file in the response
     res.status(200).sendFile(filteredpath);
 
-    res.on('end', () => {
+    res.on('finish', () => {
       try {
         deleteLocalFiles([filteredpath]);;
       } catch(err) {
